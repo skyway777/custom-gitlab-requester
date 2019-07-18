@@ -41,7 +41,6 @@ function buildAgent() {
     const { GITLAB_SSL_KEY, GITLAB_SSL_CERT } = process.env;
 
     if (GITLAB_SSL_KEY || GITLAB_SSL_CERT) {
-        console.log('GITLAB_SSL_KEY', GITLAB_SSL_KEY, 'GITLAB_SSL_CERT', GITLAB_SSL_CERT);
         const key = readKey(GITLAB_SSL_KEY);
         const cert = readKey(GITLAB_SSL_CERT);
 
@@ -54,7 +53,6 @@ function buildAgent() {
 }
 
 function defaultRequest(service: any, { body, query, sudo, method }) {
-    console.log('build request');
     const headers = new Headers(service.headers);
     let bod = body;
     
