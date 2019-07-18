@@ -54,7 +54,6 @@ function buildAgent() {
 }
 
 function defaultRequest(service: any, { body, query, sudo, method }) {
-    console.log('build request');
     const headers = new Headers(service.headers);
     let bod = body;
     
@@ -101,7 +100,6 @@ methods.forEach(m => {
 
         try {
             response = await Ky(endpoint, requestOptions);
-            console.log('response: ', response);
         } catch (e) {
             if (e.response) {
                 const output = await e.response.json();
